@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-6">
+            <div class="card card-body bg-dark text-light shadow-sm border-0">
+                <h3>Agregar un tipo de gasto</h3>
+                <form action="/addTG" method="POST">
+                    <div class="form-group mb-3 inputs">
+                        <input type="text" name="Tipo" placeholder="Tipo" class="form-control bg-dark text-light border-0" required>
+                    </div>
+                    <div class="form-group mb-3 inputs">
+                        <input type="text" name="Descripcion" placeholder="Descripcion" class="form-control bg-dark text-light border-0" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-success btn-block fade-in">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    body {
+        background-color: #121212;
+        color: #f5f5f5;
+    }
+
+    .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeIn 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .btn {
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-outline-success {
+        color: #28a745;
+        border-color: #28a745;
+    }
+
+    .btn-outline-success:hover {
+        background-color: rgba(40, 167, 69, 0.1);
+    }
+
+    .inputs{
+        border: #000000be 1.2px solid;
+    }
+</style>
+
+{% endblock %}
