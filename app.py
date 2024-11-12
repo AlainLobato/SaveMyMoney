@@ -13,15 +13,19 @@ app = Flask(__name__)
 
 #SQLSERVER CONNECTION
 app.config['SQL_SERVER_DRIVER'] = 'ODBC Driver 17 for SQL Server'
-app.config['SQL_SERVER_SERVER'] = 'localhost'
+app.config['SQL_SERVER_SERVER'] = '192.168.1.67'
 app.config['SQL_SERVER_DATABASE'] = 'SaveMyMoney'
+app.config['SQL_SERVER_USERNAME'] = 'SA'  
+app.config['SQL_SERVER_PASSWORD'] = '12345678' 
 
 connection_string = (
     f"DRIVER={app.config['SQL_SERVER_DRIVER']};"
     f"SERVER={app.config['SQL_SERVER_SERVER']};"
     f"DATABASE={app.config['SQL_SERVER_DATABASE']};"
-    "Trusted_Connection=yes;"
+    f"UID={app.config['SQL_SERVER_USERNAME']};"
+    f"PWD={app.config['SQL_SERVER_PASSWORD']};"
 )
+
 
 mysql = pyodbc.connect(connection_string)
 
