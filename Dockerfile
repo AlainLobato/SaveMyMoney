@@ -6,7 +6,7 @@ COPY . /app
 
 # Instala las dependencias necesarias
 RUN apt-get update && \
-    apt-get install -y gcc g++ curl lsb-release sqlite3
+    apt-get install -y sqlite3
 
 # Instala las librerías de Python necesarias
 RUN pip install --no-cache-dir -r requirements.txt
