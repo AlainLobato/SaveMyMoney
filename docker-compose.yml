@@ -4,21 +4,6 @@ services:
     container_name: flask_app
     ports:
       - "5000:5000"
-    environment:
-      - SQL_SERVER_SERVER=ODBC Driver 17 for SQL Server
-      - SQL_SERVER_DATABASE=SaveMyMoney
-      - SQL_SERVER_USERNAME=SA
-      - SQL_SERVER_PASSWORD=12345678
-    networks:
-      - flask_network
-
-  db:
-    image: mcr.microsoft.com/mssql/server:2019-latest
-    environment:
-      - SA_PASSWORD=12345678
-      - ACCEPT_EULA=Y
-    ports:
-      - "1434:1433"
     networks:
       - flask_network
 
